@@ -7,6 +7,6 @@ app.get('/*',(req,res)=>{
     res.sendFile(path.join(__dirname+'/src/index.html'))
 })
 
-app.listen(4000,()=>{
+app.listen(process.env.PORT || 4000,()=>{
     console.log("Listening")
 })
