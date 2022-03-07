@@ -2,11 +2,11 @@ const express = require('express')
 const path=require('path')
 
 const app = express()
-app.use(express.static('./chart'))
-app.get('/',(req,res)=>{
-    res.sendFile('index.html',{root:'src'})
+app.use(express.static(__dirname+'/dist/chart'))
+app.get('/*',(req,res)=>{
+    res.sendFile(path.join(__dirname+'/src/index.html'))
 })
 
-app.listen(process.env.PORT|| 4000,()=>{
+app.listen(4000,()=>{
     console.log("Listening")
 })
