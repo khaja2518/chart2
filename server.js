@@ -6,10 +6,10 @@ const app = express()
 app.all('/*', cors())
 
 app.use(express.static('/chart'))
-app.get('/*',(req,res)=>{
-    res.sendFile('index.html',{root:'src/'})
+app.get('/',(req,res)=>{
+    res.sendFile('index.html',{root:'/src/'})
 })
 
-app.listen(process.env.PORT || 3000,()=>{
+app.listen(process.env.PORT || 8080,()=>{
     console.log("Listening")
 })
