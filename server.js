@@ -4,9 +4,9 @@ const path=require('path')
 const app = express()
 app.use(express.static(__dirname+'/dist/chart'))
 app.get('/*',(req,res)=>{
-    res.sendFile(path.join(__dirname+'/src/index.html'))
+    res.sendFile('index.html',{root:'src'})
 })
 
-app.listen(process.env.PORT || 4000,()=>{
+app.listen(4000,()=>{
     console.log("Listening")
 })
