@@ -1,0 +1,42 @@
+<div *ngIf="id1 !=null">
+    <div id="card">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Antenna Tests</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="chart">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </mat-card-content>
+            <mat-card-actions class="actions" >
+                <button id="butt" mat-raised-button color="primary" (click)="input()">New Input</button>
+                <button id="butt" mat-flat-button color="warn" (click)="reload()">Reload</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+<ng-template [ngIf]="id1===null">
+    <div>
+        <div id="card">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Antenna Tests</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>
+                        Nothing to show here, input some data in input button below
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" (click)="input()">Input</button>
+                    <button mat-button color="warn" (click)="reload()">reload</button>
+                    <!-- <a mat-raised-button color="primary" (click)="reload()">Refresh</a> -->
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</ng-template>
+<router-outlet></router-outlet>

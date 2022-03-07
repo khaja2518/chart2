@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Data Input</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="idForm">
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Pcb Antenna Id</mat-label>
+                <input matInput formControlName="id1" placeholder="Placeholder">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Sma Antenna Id</mat-label>
+                <input matInput formControlName="id2" placeholder="Placeholder">
+
+                <!-- <mat-hint>Id 2</mat-hint> -->
+            </mat-form-field>
+        </p>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" (click)="submit()" cdkFocusInitial color="warn">Submit</button>
+</mat-dialog-actions>
