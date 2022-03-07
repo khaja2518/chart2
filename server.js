@@ -5,10 +5,10 @@ const app = express()
 
 app.all('/*', cors())
 
-app.use(express.static('/chart'))
-app.get('/',(req,res)=>{
-    res.sendFile('index.html',{root:'/src/'})
-})
+app.use(express.static('./dist/chart'))
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/chart/'}),
+);
 
 app.listen(process.env.PORT || 8080,()=>{
     console.log("Listening")
