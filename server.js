@@ -5,7 +5,7 @@ const app = express()
 
 app.all('/*', cors())
 
-app.use(express.static(__dirname+'./dist/chart'))
+app.use(express.static('/chart'))
 app.get('/*',(req,res)=>{
     res.sendFile('index.html',{root:'src/'})
 })
