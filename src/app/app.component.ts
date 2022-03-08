@@ -50,13 +50,6 @@ export class AppComponent implements OnInit {
     })
   }
 
-  home() {
-    this._auth.getHome().then((res: any) => {
-      this.result = res
-      // console.log(this.result)
-    })
-  }
-
   pcb() {
     if (this.set1 === true && this.set2 === false) {
       this._auth.getPcbbyid(this.id1).then((res: any) => {
